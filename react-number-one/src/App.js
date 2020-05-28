@@ -1,17 +1,24 @@
 import React from "react";
 
-function formatName(user) {
-  return user.name + " " + user.surname;
+function Avatar(props) {
+  return (
+    <div>
+      <img src={props.user.url} alt={props.user.name} />
+      <br />
+      <span>{props.user.name}</span>
+    </div>
+  );
 }
 
 function App() {
-  let image = "https://www.google.com.br/google.jpg";
+  let user = {
+    url="https://www.google.com.br/google.jpg",
+    name="Sam Silper Jay"
+  }
+  return <>
+    <Avatar user={user} />
 
-  return (
-    <>
-      <img src={image} />
-    </>
-  );
+  </>;
 }
 
 export default App;
