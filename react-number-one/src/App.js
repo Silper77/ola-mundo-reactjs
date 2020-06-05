@@ -1,28 +1,33 @@
 import React from "react";
+import styled from "styled-components";
 
-function Avatar(props) {
-  return (
-    <div style={{ backgroundColor: "red", padding: 20, width: 150 }}>
-      <img
-        style={{ width: 50, height: 50 }}
-        src={props.user.url}
-        alt={props.user.name}
-      />
-      <br />
-      <span>{props.user.name}</span>
-    </div>
-  );
-}
+const Site = styled.div`
+  width: 400px;
+  height: 400px;
+  background-color: black;
+`;
+
+const Button = styled.button`
+  font-size: 19px;
+  padding: 10px 15px;
+  border: 3px dashed #ff0000;
+  color: "#FF0000";
+  background-color: "#FFF";
+  margin: 5px;
+  border-radius: 5px;
+`;
+
+const ButtonSmall = styled(Button)`
+  padding: 5px 10px;
+  font-size: 16px;
+`;
 
 function App() {
-  let user = {
-    url: "https://www.google.com.br/google.jpg",
-    name: "Sam Silper Jay",
-  };
   return (
-    <>
-      <Avatar user={user} />
-    </>
+    <Site>
+      <Button>clique aqui</Button>
+      <ButtonSmall>clique aqui</ButtonSmall>
+    </Site>
   );
 }
 
